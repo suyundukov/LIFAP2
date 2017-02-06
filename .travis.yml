@@ -1,10 +1,13 @@
-language: racket
+language: go
 
-sudo: required
+sudo: false
 
 env:
-  - RACKET_VERSION=6.8
-  - RACKET_VERSION=HEAD
+  global:
+    - RACKET_DIR=~/racket
+  matrix:
+    - RACKET_VERSION=6.8
+    - RACKET_VERSION=HEAD
 
 notifications:
   email:
@@ -19,5 +22,9 @@ before_install:
 install:
   - cat travis-racket/install-racket.sh | bash
 
+before_script:
+  - rm -rf travis-racket
+  - export PATH="${RACKET_DIR}/bin:${PATH}"
+
 script:
-  - racket ./**/*.rkt
+  - find . -name "*.rkt" -exec racket {} \;
