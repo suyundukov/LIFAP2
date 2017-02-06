@@ -1,0 +1,23 @@
+language: racket
+
+sudo: required
+
+env:
+ - RACKET_VERSION=6.8
+ - RACKET_VERSION=HEAD
+
+notifications:
+  email:
+    recipients:
+      - mail@nurlan.co
+    on_success: never
+    on_failure: change
+
+before_install:
+  - git clone https://github.com/greghendershott/travis-racket.git
+
+install:
+  - cat travis-racket/install-racket.sh | bash
+
+script:
+  - racket ./**/*.rkt
