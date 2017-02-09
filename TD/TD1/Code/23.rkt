@@ -1,15 +1,16 @@
 #lang racket
-; -> le double d'un nombre passée en paramètre
+; 2. Premières fonctions en Scheme
+; -> renvoie le double d'un nombre passée en paramètre
 (define double ; -> un nombre
   (lambda (n) ; - un nombre
     (* 2 n)))
 
-; -> la moyenne de deux nombres passée en paramètre
+; -> renvoie la moyenne de deux nombres passée en paramètre
 (define moyenne ; -> un nombre
   (lambda (a b) ; - un nombre
     (/ (+ a b) 2)))
 
-; -> un booléen VRAI/FAUX , si le nombre passée en paramètre est positif
+; -> renvoie un booléen VRAI/FAUX, si le nombre passée en paramètre est positif
 (define is-positive? ; -> un booléen
   (lambda (n) ; - un nombre
     (>= n 0)))
@@ -19,7 +20,8 @@
       #t
       #f)))
 
-; -> la mention pour une note donnée (Ex.: 15 -> bien, 12 -> assez bien)
+; -> renvoie la mention pour une note donnée
+; (Ex.: 15 -> bien, 12 -> assez bien)
 (define mention ; -> une chaine de caractère
   (lambda (note) ; - un nombre
     (if (>= note 16) "Tres bien"
@@ -34,7 +36,7 @@
           ((>= note 12) "Assez bien")
           ((>= note 10) "Passable"))))
 
-; -> la somme des n premiers entiers
+; -> renvoie la somme des n premiers entiers
 (define somme ; -> un nombre
   (lambda (n) ; - un nombre
     (if (= n 1) 1
@@ -46,7 +48,8 @@
     (if (<= n 2) 1
       (+ (fibo(- n 1)) (fibo(- n 2))))))
 
-; -> la somme de N premiers nombres pairs
+; 3. Fonction mystère en Scheme
+; -> renvoie la somme de N premiers nombres pairs
 (define mystere ; -> un nombre
   (lambda (n) ; - un nombre
     (if (= n 0) 0
@@ -64,3 +67,4 @@
 (display "La somme de 6 premiers entiers est : ") (somme 6)
 (display "Le 5ème terme de Fibonacci est : ") (fibo 5)
 (display "La somme des nombres pairs jusqu'à 6 est : ") (mystere 6)
+
