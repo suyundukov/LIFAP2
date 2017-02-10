@@ -11,10 +11,10 @@
     (/ (+ a b) 2)))
 
 ; -> renvoie un booléen VRAI/FAUX, si le nombre passée en paramètre est positif
-(define is-positive? ; -> un booléen
+(define positive? ; -> un booléen
   (lambda (n) ; - un nombre
     (>= n 0)))
-(define is-positive-alt? ; -> un booléen
+(define positive-alt? ; -> un booléen
   (lambda (n) ; - un nombre
     (if (>= n 0)
       #t
@@ -58,13 +58,11 @@
         (mystere (- n 1))))))
 
 ; TESTS
-(display "Le double de 6 est : ") (double 6)
-(display "La moyenne de 5 es 6 est : ") (moyenne 5 6)
-(display (if (and (is-positive? 5) (is-positive-alt? 5))
-           "5 est positif"
-           "5 est négatif"))
-(display "La mention de 13 est : ") (mention-alt 13)
-(display "La somme de 6 premiers entiers est : ") (somme 6)
-(display "Le 5ème terme de Fibonacci est : ") (fibo 5)
-(display "La somme des nombres pairs jusqu'à 6 est : ") (mystere 6)
+(display "(double 6) -> ") (double 6)
+(display "(moyenne 5 6) -> ") (moyenne 5 6)
+(display "(positive? 5) -> ") (positive? 5)
+(display "(mention-alt 13) -> ") (mention-alt 13)
+(display "(somme 6) -> ") (somme 6)
+(display "(fibo 5) -> ") (fibo 5)
+(display "(mystere 6) -> ") (mystere 6)
 
