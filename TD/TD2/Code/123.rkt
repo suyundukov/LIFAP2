@@ -14,15 +14,13 @@
 ; Définir en Scheme
 ; -> retourne le second élément d’une liste
 (define second ; -> second élément d'une liste
-  (lambda (l) ; - une liste
-    (if (null? l) '()
-      (cadr l))))
+  (lambda (l) ; - une liste d'au moins 2 éléments
+    (cadr l)))
 
 ; -> retourne vrai si une liste n’a qu’un seul élément
 (define alone? ; -> un boolèen
   (lambda (l) ; - une liste
-    (if (null? l) #f
-      (if (null? (cdr l)) #t #f))))
+    (and (not (null? l)) (null? (cdr l)))))
 
 ; -> calcule la longueur d’une liste
 (define length ; -> un nombre
@@ -34,7 +32,7 @@
 (define present? ; -> un boolèen
   (lambda (l n) ; - une liste et un nombre
     (if (null? l) #f
-      (if (equal? n (car l)) #t
+      (if (eq? n (car l)) #t
         (present? (cdr l) n)))))
 
 ; -> retourne le Nième élément d'une liste
@@ -45,20 +43,20 @@
 
 ; -> insère un élément dans une liste après le Nème élément
 (define insert ; -> une liste
-  (lambda (l i n) ; - une liste un nombre et un élément
+  (lambda (l i n) ; - une liste, un nombre et un élément
     (if (= i 0) (cons n l)
       (cons (car l) (insert (cdr l) (- i 1) n)))))
 
 ; -> retourne le dernier élément d’une liste non vide
 (define return-last ; -> un élément d'une liste
-  (lambda (l) ; - une liste
+  (lambda (l) ; - une liste non vide
     (if (null? (cdr l)) (car l)
       (return-last (cdr l)))))
 
 ; Donner la spécification de la fonction mystère ci-dessous :
 ; -> renvoie le nombre d'élément dans la liste
-(define mystere
-  (lambda (x l)
+(define mystere ; -> un entier
+  (lambda (x l) ; -> un élément et une liste
     (cond ((null? l) 0)
           ((eq? x (car l)) (+ 1 (mystere x (cdr l))))
           (else (mystere x (cdr l))))))
