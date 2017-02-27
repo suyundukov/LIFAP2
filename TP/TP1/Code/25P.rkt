@@ -22,7 +22,7 @@
   (lambda (n) ; - un entier
     (if (or (= n 2) (= n 0) (= n 1)) #t
       (if (< n 0) #f
-        (if (= (modulo n 2) 0)
+        (if (even? n)
           (puissance2? (/ n 2))
           #f)))))
 
@@ -52,7 +52,7 @@
 (define syracuse? ; -> un nombre
   (lambda (x) ; - un nombre
     (if (= x 1) #t
-      (if (= (modulo x 2) 0)
+      (if (even? x)
         (syracuse? (/ x 2))
         (syracuse? (+ (* 3 x) 1))))))
 
