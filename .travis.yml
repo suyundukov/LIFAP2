@@ -27,4 +27,4 @@ before_script:
   - export PATH="${RACKET_DIR}/bin:${PATH}"
 
 script:
-  - find . -name "*.rkt" -exec racket {} \;
+  - find . -name "*.rkt" -exec echo 'Executing 🔥 on ' {} \; -exec racket {} \;
