@@ -55,7 +55,7 @@
 ; -> calcule la somme des chiffres d'un entier positif
 (define somme-des-chiffres ; -> un entier
   (lambda (n) ; - un entier positif
-    (if (< n 1) n
+    (if (< n 10) n
       (+ (modulo n 10) (somme-des-chiffres (quotient n 10))))))
 
 (define somme-des-chiffres-alt ; -> un entier
@@ -104,19 +104,19 @@
 (define liste-random ; -> une liste
   (lambda (n m) ; - deux entiers
     (if (= n 0) '()
-      (cons (random m) (liste-random (- n 1) m)))))
+      (cons (random (+ m 1)) (liste-random (- n 1) m)))))
 
 ; -> retourne une liste d’un entier entre 0 et N, et d’un booléen indiquant si ce nombre est un multiple de trois ou de sept
 (define nb-test ; -> une liste
   (lambda (n) ; - un entier
-    (let ((r (random n)))
+    (let ((r (random (+ n 1))))
       (list r (or (= (modulo r 3) 0) (= (modulo r 7) 0))))))
 
 ; -> identique à la fonction LISTE-RANDOM, ne retourne que des nombres pairs
 (define liste-random-pairs ; -> une liste
   (lambda (n m) ; - deux entiers
     (if (= n 0) '()
-      (let ((r (random m)))
+      (let ((r (random (+ m 1))))
         (if (even? r)
           (cons r (liste-random-pairs (- n 1) m))
           (liste-random-pairs n m))))))

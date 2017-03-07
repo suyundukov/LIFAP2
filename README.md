@@ -53,7 +53,7 @@
   - [Source Code](TP/TP1/Code)
 - [TP2 : Listes, let, calculs en remontant ou en descendant](TP/TP2)
   - [Sujet](TP/TP2/TP2.pdf)
-  - Corrigé[](TP/TP2/TP2-cor.pdf)
+  - [Corrigé](TP/TP2/TP2-cor.rkt)
   - [Source Code](TP/TP2/Code)
 - [TP3 : Tris, listes de listes](TP/TP3)
   - [Sujet](TP/TP3/TP3.pdf)
