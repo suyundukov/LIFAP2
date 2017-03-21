@@ -57,7 +57,7 @@
   - [Source Code](TP/TP2/Code)
 - [TP3 : Tris, listes de listes](TP/TP3)
   - [Sujet](TP/TP3/TP3.pdf)
-  - Corrigé[](TP/TP3/TP3-cor.pdf)
+  - [Corrigé](TP/TP3/TP3-cor.rkt)
   - [Source Code](TP/TP3/Code)
 - [TP4 : Récursivité profonde, arbres](TP/TP4)
   - [Sujet](TP/TP4/TP4.pdf)
