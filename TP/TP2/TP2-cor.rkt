@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname TP2cor) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t write repeating-decimal #f #t none #f ())))
+#lang racket
 ; LIFAP2 - TP2
 
 (define symboles ; -> liste de symboles
@@ -26,7 +24,7 @@
     (cond ((null? l) l)
           ((eq? e1 (car l)) (cons e2 (remplace e1 e2 (cdr l))))
           (else (cons (car l) (remplace e1 e2 (cdr l)))))))
-        
+
 ;;; MEMORISATION
 
 (define fibo-liste ; -> liste de nombres
@@ -64,7 +62,7 @@
 
 ; Calculs en remontant ou en descendant
 
-; version classique, avec calcul en remontant 
+; version classique, avec calcul en remontant
 (define somme-des-chiffres ; -> entier
   (lambda (n) ; n entier positif
     (if (< n 10) ;  ou bien n=0 -> 0
@@ -106,7 +104,7 @@
 
 (define premiers ; -> liste
   (lambda (n l) ; l liste, n entier compris entre 1 et la longueur de l
-    (if (= 0 n) 
+    (if (= 0 n)
         '()
         (cons (car l) (premiers (- n 1) (cdr l))))))
 

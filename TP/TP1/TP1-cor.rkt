@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname TP1cor) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t write repeating-decimal #f #t none #f ())))
+#lang racket
 ; LIFAP2 - TP1
 
 (define aire_cercle ; -> nombre
@@ -38,7 +36,7 @@
 
 (define repete ; -> liste
   (lambda (l) ; l liste
-    (if (null? l) 
+    (if (null? l)
         '()
         (cons (car l) (cons (car l) (repete (cdr l)))))))
 

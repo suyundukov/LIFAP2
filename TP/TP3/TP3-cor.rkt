@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname TP3cor) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t write repeating-decimal #f #t none #f ())))
+#lang racket
 ; LIFAP2 - TP3
 
 ; TRI PAR SELECTION DU MINIMUM
@@ -91,16 +89,6 @@
     (if (= n 0)
         '()
        (cons (list x y) (sp (- n 1) (+ x y) (* x y))))))
-
-; autre solution nettement moins elegante
-(define sp2 ; -> liste de couples
-  (lambda (n x y) ; n entier, x y nombres
-    (cond ((= n 0) '())
-          ((= n 1) (list (list x y)))
-          (else (let* ((r (sp2 (- n 1) x y))
-                      (d (dernier r)))
-                  (append r (list (list (+ (car d) (cadr d))
-                                        (* (car d) (cadr d))))))))))
 
 ; LISTES ORDONNEES
 
